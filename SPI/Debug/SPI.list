@@ -1316,7 +1316,7 @@ void ReadSwitch()
 		}
 	else if (SPIRx[2]==7)
 		{
-			Switch = 4;
+			Switch = 3;
 		}
 }
  8000aee:	e016      	b.n	8000b1e <ReadSwitch+0x42>
@@ -1336,9 +1336,9 @@ void ReadSwitch()
  8000b02:	789b      	ldrb	r3, [r3, #2]
  8000b04:	2b0b      	cmp	r3, #11
  8000b06:	d103      	bne.n	8000b10 <ReadSwitch+0x34>
-			Switch = 3;
+			Switch = 4;
  8000b08:	4b08      	ldr	r3, [pc, #32]	@ (8000b2c <ReadSwitch+0x50>)
- 8000b0a:	2203      	movs	r2, #3
+ 8000b0a:	2204      	movs	r2, #4
  8000b0c:	701a      	strb	r2, [r3, #0]
 }
  8000b0e:	e006      	b.n	8000b1e <ReadSwitch+0x42>
@@ -1347,9 +1347,9 @@ void ReadSwitch()
  8000b12:	789b      	ldrb	r3, [r3, #2]
  8000b14:	2b07      	cmp	r3, #7
  8000b16:	d102      	bne.n	8000b1e <ReadSwitch+0x42>
-			Switch = 4;
+			Switch = 3;
  8000b18:	4b04      	ldr	r3, [pc, #16]	@ (8000b2c <ReadSwitch+0x50>)
- 8000b1a:	2204      	movs	r2, #4
+ 8000b1a:	2203      	movs	r2, #3
  8000b1c:	701a      	strb	r2, [r3, #0]
 }
  8000b1e:	bf00      	nop

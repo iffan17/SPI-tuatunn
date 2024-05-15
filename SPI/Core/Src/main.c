@@ -441,11 +441,11 @@ void ReadSwitch()
 		}
 	else if (SPIRx[2]==11)
 		{
-			Switch = 3;
+			Switch = 4;
 		}
 	else if (SPIRx[2]==7)
 		{
-			Switch = 4;
+			Switch = 3;
 		}
 }
 
@@ -545,13 +545,22 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if (htim == &htim2)
 	{
-		LMode1+=1;
-		if (LMode1>16)
+		if(tick <300)
 		{
-			LMode1 = 1;
+			LMode1+=1;
+			if (LMode1>16)
+			{
+				LMode1 = 1;
+			}
+			if (LMode1%8 == 0){
+				n = rand() % 10;
+			}
+			tick++;
 		}
-		if (LMode1%8 == 0){
-			n = rand() % 10;
+		else{
+			n = 0;
+			//send UART
+
 		}
 	}
 }
